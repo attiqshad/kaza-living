@@ -5,4 +5,5 @@
 - `build.format: 'file'` beibehalten – URLs sind `/datenschutz.html` usw. wie auf der alten Seite; `html_handling: "none"`, damit Cloudflare keine .html-Endungen umleitet.
 - Deals-Seite: Werbekennzeichnung (Banner oben + Affiliate-Hinweis) nicht entfernen; Links mit `rel="sponsored noopener"`. Keine adblocker-typischen Klassen (ad-*, affiliate-*, sponsor*, promo*) – Banner heißt `werbehinweis`.
 - Keine externen Schriften/CDNs (DSGVO) – alles liegt unter `public/`.
+- Automatisches Deploy (Workers Builds, seit 2026-09-30): jeder Push auf `main` baut (`npm run build`) und deployt (`npx wrangler deploy`) – ein Push ist also ein Livegang. `npm run deploy` lokal nur noch im Notfall.
 - Der Nutzer gibt jeden Commit/Push/Deploy frei.
