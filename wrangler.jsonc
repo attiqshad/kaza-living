@@ -13,12 +13,11 @@
 		"run_worker_first": true
 	},
 	"workers_dev": true,
-	"preview_urls": true
-	// Erst eintragen, wenn die Zone kaza-living.de in diesem Cloudflare-Account aktiv ist
-	// (Nameserver von Strato auf Cloudflare umgestellt) – sonst schlägt das Deploy fehl:
-	// "routes": [
-	// 	{ "pattern": "kaza-living.de", "custom_domain": true },
-	// 	{ "pattern": "www.kaza-living.de", "custom_domain": true },
-	// 	{ "pattern": "deals.kaza-living.de", "custom_domain": true }
-	// ]
+	"preview_urls": true,
+	// Custom Domains (Zone kaza-living.de ist seit 2026-09-30 in Cloudflare aktiv)
+	"routes": [
+		{ "pattern": "kaza-living.de", "custom_domain": true },
+		{ "pattern": "www.kaza-living.de", "custom_domain": true },
+		{ "pattern": "deals.kaza-living.de", "custom_domain": true }
+	]
 }
