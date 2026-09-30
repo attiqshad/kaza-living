@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wohnraum mit Fenster, Korb, Vase und Pflanze">
+  <defs>
+    <linearGradient id="hwin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F6EBD6"/><stop offset="1" stop-color="#E9CFA0"/>
+    </linearGradient>
+    <pattern id="hweave" width="14" height="14" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#B8824A"/>
+      <rect width="7" height="14" fill="#A87338"/>
+    </pattern>
+    <linearGradient id="hglow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F3E6CF"/><stop offset="1" stop-color="#E4D6BE"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="1000" fill="url(#hglow)"/>
+  <rect y="720" width="800" height="280" fill="#DCCBAF"/>
+
+  <!-- arched window -->
+  <path d="M235 140 a165 165 0 0 1 330 0 V620 H235 Z" fill="url(#hwin)" stroke="#2A2420" stroke-width="10"/>
+  <line x1="400" y1="90" x2="400" y2="620" stroke="#2A2420" stroke-width="6"/>
+  <line x1="235" y1="360" x2="565" y2="360" stroke="#2A2420" stroke-width="6"/>
+  <circle cx="330" cy="235" r="30" fill="#F7EFDD" opacity=".8"/>
+
+  <!-- console table -->
+  <rect x="150" y="700" width="500" height="26" rx="6" fill="#5B4A3A"/>
+  <rect x="185" y="726" width="20" height="120" fill="#4A3B2E"/>
+  <rect x="595" y="726" width="20" height="120" fill="#4A3B2E"/>
+
+  <!-- basket on floor -->
+  <path d="M470 846 h150 l-18 118 h-114 Z" fill="url(#hweave)" stroke="#2A2420" stroke-width="7"/>
+  <rect x="452" y="836" width="186" height="20" rx="9" fill="#C89A5E" stroke="#2A2420" stroke-width="6"/>
+
+  <!-- vase on table -->
+  <path d="M250 700 c-34 -70 -10 -150 40 -150 s74 80 40 150 Z" fill="#9C5A3C" stroke="#2A2420" stroke-width="7"/>
+  <!-- plant stems -->
+  <g stroke="#5E6048" stroke-width="8" fill="none" stroke-linecap="round">
+    <path d="M300 560 C280 470 250 450 235 430"/>
+    <path d="M300 560 C320 470 350 455 372 440"/>
+    <path d="M300 560 C300 460 300 440 300 405"/>
+  </g>
+  <g fill="#6B6E52">
+    <ellipse cx="228" cy="424" rx="26" ry="12" transform="rotate(-35 228 424)"/>
+    <ellipse cx="380" cy="434" rx="26" ry="12" transform="rotate(35 380 434)"/>
+    <ellipse cx="300" cy="398" rx="14" ry="30"/>
+  </g>
+
+  <!-- small pot / bowl -->
+  <path d="M470 690 c0 26 22 42 55 42 s55 -16 55 -42 Z" fill="#C89A5E" stroke="#2A2420" stroke-width="6"/>
+
+  <!-- rug -->
+  <ellipse cx="400" cy="930" rx="300" ry="34" fill="#B8824A" opacity=".35"/>
+</svg>

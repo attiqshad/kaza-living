@@ -1,0 +1,22 @@
+<svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Küchen-Organizer mit Kochutensilien und Schneidebrett">
+  <rect width="700" height="700" fill="#EFE4D0"/>
+  <rect y="470" width="700" height="230" fill="#E1D2B4"/>
+  <line x1="0" y1="470" x2="700" y2="470" stroke="#C9B79B" stroke-width="4"/>
+
+  <!-- utensil crock -->
+  <path d="M235 300 c0 0 -10 200 90 200 s90 -200 90 -200 Z" fill="#C08A4C" stroke="#3A2712" stroke-width="9"/>
+  <ellipse cx="325" cy="300" rx="90" ry="26" fill="#D8AC6C" stroke="#3A2712" stroke-width="8"/>
+  <!-- utensils -->
+  <g stroke="#5B4A3A" stroke-width="12" stroke-linecap="round">
+    <line x1="300" y1="300" x2="285" y2="170"/>
+    <line x1="330" y1="300" x2="345" y2="150"/>
+    <line x1="355" y1="300" x2="378" y2="185"/>
+  </g>
+  <ellipse cx="285" cy="162" rx="16" ry="24" fill="#6E5A46"/>
+  <circle cx="378" cy="180" r="16" fill="#6E5A46"/>
+
+  <!-- cutting board -->
+  <rect x="420" y="430" width="210" height="30" rx="10" fill="#B57C43"/>
+  <circle cx="440" cy="418" r="18" fill="none" stroke="#B57C43" stroke-width="10"/>
+  <rect x="410" y="446" width="230" height="16" rx="8" fill="#9A6B38"/>
+</svg>

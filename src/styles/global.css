@@ -1,0 +1,143 @@
+:root{
+  --paper:#ECE4D8;
+  --paper-soft:#F6F1E8;
+  --espresso:#2A2420;
+  --espresso-soft:#3B342D;
+  --ink:#2A2420;
+  --ink-mute:#6B6055;
+  --honey:#B8824A;
+  --honey-deep:#9A6B38;
+  --clay:#9C5A3C;
+  --line:rgba(42,36,32,.14);
+  --line-light:rgba(246,241,232,.18);
+  --maxw:1180px;
+  --r:14px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Hanken Grotesk",system-ui,sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+h1,h2,h3,h4{font-family:"Fraunces",Georgia,serif;font-weight:400;line-height:1.05;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+/* ---------- Wordmark ---------- */
+.wordmark{
+  font-family:"Poppins",sans-serif;
+  font-weight:300;
+  letter-spacing:.04em;
+  line-height:1;
+  display:inline-block;
+}
+.wordmark .ipa{opacity:.55;font-weight:300}
+
+/* ---------- Header ---------- */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(236,228,216,.82);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.nav .wordmark{font-size:26px}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a{font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-mute);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{
+  font-family:"Hanken Grotesk";font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+  border:1px solid var(--ink);border-radius:40px;padding:9px 20px;color:var(--ink);
+  transition:background .2s,color .2s;
+}
+.nav-cta:hover{background:var(--ink);color:var(--paper)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;transition:.25s}
+
+/* ---------- Buttons (shared across pages) ---------- */
+.btn{
+  font-family:"Hanken Grotesk";font-size:15px;letter-spacing:.02em;
+  display:inline-flex;align-items:center;gap:9px;
+  padding:14px 26px;border-radius:46px;cursor:pointer;
+  transition:transform .2s,background .2s,color .2s,box-shadow .2s;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-dark{background:var(--espresso);color:var(--paper-soft)}
+.btn-dark:hover{box-shadow:0 14px 30px -16px rgba(42,36,32,.7)}
+.btn-line{border:1px solid var(--ink);color:var(--ink)}
+.btn-line:hover{background:var(--ink);color:var(--paper)}
+.btn svg{width:16px;height:16px}
+
+/* image frame with always-present gradient fallback */
+.frame{position:relative;border-radius:var(--r);overflow:hidden}
+.frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--line);border-radius:var(--r);pointer-events:none}
+.g-honey{background:linear-gradient(140deg,#C8975A,#8C5F32)}
+.g-oat{background:linear-gradient(140deg,#E2D6C2,#C4AE8E)}
+.g-espresso{background:linear-gradient(140deg,#4A3F36,#241F1B)}
+.g-clay{background:linear-gradient(140deg,#B27A5C,#824E37)}
+.g-sage{background:linear-gradient(140deg,#8E9072,#5E6048)}
+
+.section{padding:88px 0}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;margin-bottom:38px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(28px,4vw,42px);font-weight:300;max-width:18ch}
+.sec-head .eyebrow{margin-bottom:14px}
+.sec-head p{color:var(--ink-mute);max-width:34ch}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--honey-deep);
+  margin-bottom:26px;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--honey-deep)}
+
+/* ---------- Footer ---------- */
+footer{border-top:1px solid var(--line);padding:44px 0 56px}
+.foot{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start}
+.foot .wordmark{font-size:24px}
+.foot small{color:var(--ink-mute);font-size:13px;display:block;margin-top:12px;max-width:46ch}
+.foot-links{display:flex;gap:24px;flex-wrap:wrap;font-size:13.5px;color:var(--ink-mute)}
+.foot-links a:hover{color:var(--ink)}
+
+/* ---------- Rechtstexte (Datenschutz, AGB, Widerruf) ---------- */
+.legal-page{padding:56px 0 90px;max-width:74ch}
+.legal-page h1{font-size:clamp(30px,4.4vw,44px);font-weight:300;margin-bottom:30px}
+.legal-page h2{font-size:22px;font-weight:400;margin-top:2em;margin-bottom:.5em}
+.legal-page h3{font-size:17px;font-weight:600;font-family:"Hanken Grotesk";margin-top:1.4em;margin-bottom:.4em}
+.legal-page h4{font-size:15.5px;font-weight:600;font-family:"Hanken Grotesk";margin-top:1.1em;margin-bottom:.3em}
+.legal-page p{margin-top:.7em}
+.legal-page ul{margin:.7em 0 .7em 1.4em}
+.legal-page li{margin-top:.4em}
+.legal-page a{text-decoration:underline;color:var(--honey-deep)}
+.legal-page .source{margin-top:2em;font-size:13px;color:var(--ink-mute)}
+.placeholder-box{background:var(--paper-soft);border:1px solid var(--line);border-radius:14px;padding:26px 28px;margin-top:20px;color:var(--ink-mute)}
+
+/* ---------- reveal (scroll-in animation, used on the home page) ---------- */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+@media (max-width:600px){
+  body{font-size:16px}
+  .wrap{padding:0 20px}
+  .nav-links{
+    position:absolute;top:74px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;
+    background:var(--paper);border-bottom:1px solid var(--line);padding:8px 20px 16px;
+    transform:translateY(-130%);transition:transform .3s;
+  }
+  .nav-links.open{transform:none}
+  .nav-links a{padding:13px 0;width:100%;border-bottom:1px solid var(--line)}
+  .nav-links .nav-cta{margin-top:12px;border-bottom:0}
+  .burger{display:block}
+  .section{padding:62px 0}
+}

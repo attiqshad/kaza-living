@@ -1,0 +1,41 @@
+<svg viewBox="0 0 800 1000" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stilvoll gestalteter Innenraum bei Abendlicht">
+  <defs>
+    <linearGradient id="abg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4A3F36"/><stop offset="1" stop-color="#241F1B"/>
+    </linearGradient>
+    <radialGradient id="alamp" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#E9C387" stop-opacity=".85"/><stop offset="1" stop-color="#E9C387" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#abg)"/>
+  <rect y="740" width="800" height="260" fill="#2E2620"/>
+
+  <!-- framed art -->
+  <rect x="120" y="150" width="200" height="260" rx="4" fill="#3B342D" stroke="#D9A86A" stroke-width="6"/>
+  <path d="M150 360 l50 -110 40 60 40 -80 40 130 Z" fill="#7C6A52" opacity=".7"/>
+
+  <!-- floor lamp glow -->
+  <circle cx="600" cy="300" r="200" fill="url(#alamp)"/>
+  <line x1="600" y1="330" x2="600" y2="760" stroke="#7A6A57" stroke-width="8"/>
+  <path d="M560 300 h80 l-16 60 h-48 Z" fill="#D9A86A"/>
+
+  <!-- armchair -->
+  <path d="M180 560 q0 -70 70 -70 h180 q70 0 70 70 v170 h-320 Z" fill="#6E5A46"/>
+  <rect x="170" y="700" width="360" height="60" rx="16" fill="#5A4938"/>
+  <rect x="200" y="760" width="24" height="70" fill="#4A3B2E"/>
+  <rect x="476" y="760" width="24" height="70" fill="#4A3B2E"/>
+  <rect x="250" y="600" width="120" height="90" rx="14" fill="#B8824A"/>
+
+  <!-- plant -->
+  <path d="M640 760 h90 l-14 -110 h-62 Z" fill="#3B342D" stroke="#D9A86A" stroke-width="5"/>
+  <g stroke="#7C8462" stroke-width="9" fill="none" stroke-linecap="round">
+    <path d="M685 650 C660 560 630 545 612 528"/>
+    <path d="M685 650 C712 560 742 550 762 536"/>
+    <path d="M685 650 C685 550 685 520 685 492"/>
+  </g>
+  <g fill="#8E9670">
+    <ellipse cx="606" cy="522" rx="30" ry="13" transform="rotate(-35 606 522)"/>
+    <ellipse cx="768" cy="530" rx="30" ry="13" transform="rotate(35 768 530)"/>
+    <ellipse cx="685" cy="486" rx="15" ry="34"/>
+  </g>
+</svg>

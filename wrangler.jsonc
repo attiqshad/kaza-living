@@ -1,0 +1,24 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "kaza-living",
+	"compatibility_date": "2026-09-30",
+	// Ein Worker für beide Seiten: kaza-living.de und deals.kaza-living.de (Routing nach Hostname)
+	"main": "src/worker.js",
+	"assets": {
+		"directory": "./dist",
+		"binding": "ASSETS",
+		"not_found_handling": "404-page",
+		// Kein Umschreiben von *.html-URLs – datenschutz.html etc. bleiben exakt so erreichbar
+		"html_handling": "none",
+		"run_worker_first": true
+	},
+	"workers_dev": true,
+	"preview_urls": true
+	// Erst eintragen, wenn die Zone kaza-living.de in diesem Cloudflare-Account aktiv ist
+	// (Nameserver von Strato auf Cloudflare umgestellt) – sonst schlägt das Deploy fehl:
+	// "routes": [
+	// 	{ "pattern": "kaza-living.de", "custom_domain": true },
+	// 	{ "pattern": "www.kaza-living.de", "custom_domain": true },
+	// 	{ "pattern": "deals.kaza-living.de", "custom_domain": true }
+	// ]
+}

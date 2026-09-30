@@ -1,0 +1,240 @@
+---
+// deals.kaza-living.de – der Worker (src/worker.js) liefert diese Seite unter "/" der Subdomain aus.
+// Neue Empfehlung = neuer Eintrag in `deals`. Bild: eine der SVGs aus public/img/,
+// Hintergrund: g-honey | g-oat | g-clay.
+const deals = [
+  {
+    tag: 'Schlafzimmer',
+    title: 'Jacobson Spannbettlaken, Baumwolle',
+    text: 'Spannbetttuch aus reiner Baumwolle, erhältlich in 90×200–100×200 cm.',
+    url: 'https://link.amazon/B04UB6Clt',
+    img: 'product-decor.svg',
+    alt: 'Jacobson Spannbettlaken aus Baumwolle',
+    bg: 'g-honey',
+  },
+  {
+    tag: 'Schlafzimmer',
+    title: 'Utopia Bedding Spannbetttuch',
+    text: 'Atmungsaktiv und abriebresistent für erholsamen Schlaf.',
+    url: 'https://amzn.to/4gEbN4B',
+    img: 'product-baskets.svg',
+    alt: 'Utopia Bedding Spannbetttuch',
+    bg: 'g-oat',
+  },
+  {
+    tag: 'Küche',
+    title: 'Mepal Bento Box',
+    text: 'Praktische Essensbox für Sandwiches und Mittagessen unterwegs.',
+    url: 'https://amzn.to/3Ua8wRR',
+    img: 'product-kitchen.svg',
+    alt: 'Mepal Bento Box für Sandwiches und Mittagessen',
+    bg: 'g-clay',
+  },
+  {
+    tag: 'Schlafzimmer',
+    title: 'Spannbettlaken 140×200cm, Baumwolle',
+    text: 'Spannbetttuch aus Baumwolle für erhöhte Matratzen, 140×200 cm.',
+    url: 'https://amzn.to/3Ucnfvy',
+    img: 'product-decor.svg',
+    alt: 'Spannbettlaken 140x200cm aus Baumwolle',
+    bg: 'g-honey',
+  },
+  {
+    tag: 'Küche',
+    title: 'Emsa Frischhaltedosen-Set',
+    text: 'Spülmaschinen- und mikrowellenfestes Set für die Vorratshaltung.',
+    url: 'https://amzn.to/4wD2kiE',
+    img: 'product-kitchen.svg',
+    alt: 'Emsa Frischhaltedosen-Set',
+    bg: 'g-oat',
+  },
+  {
+    tag: 'Küche',
+    title: 'uandu Glasbehälter, Borosilikatglas',
+    text: 'Frischhaltedosen aus robustem Borosilikatglas für Küche und Vorrat.',
+    url: 'https://amzn.to/4xVagNx',
+    img: 'product-baskets.svg',
+    alt: 'uandu Glasbehälter aus Borosilikatglas',
+    bg: 'g-clay',
+  },
+];
+---
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>'ka:za deals — Kaza Living | Empfehlungen &amp; Angebote</title>
+<meta name="description" content="Kaza Living Deals: ausgesuchte Empfehlungen und Angebote rund um Wohnaccessoires und Küche — mit Partnerlinks zu unseren Lieblingsprodukten.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="/css/fonts.css">
+</head>
+<body>
+
+<div class="werbehinweis"><strong>Werbung</strong> — Diese Seite enthält Affiliate-/Partnerlinks. Beim Kauf über diese Links erhält Kaza Living ggf. eine Provision, ohne Mehrkosten für dich.</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="wordmark" aria-label="Kaza Living Deals Startseite"><span class="ipa">'</span>ka<span class="ipa">:</span>za <span style="color:var(--honey-deep);font-size:15px;vertical-align:middle">deals</span></a>
+    <nav class="nav-links">
+      <a href="https://kaza-living.de">Zur Hauptseite ↗</a>
+    </nav>
+  </div>
+</header>
+
+<a id="top"></a>
+
+<section class="hero wrap">
+  <span class="eyebrow">Empfehlungen &amp; Angebote</span>
+  <h1>Unsere Lieblingsstücke<br><em>zum Nachkaufen.</em></h1>
+  <p class="lead">Eine kuratierte Auswahl an Produkten, die wir selbst nutzen oder empfehlen — mit direkten Links zu unseren Partner-Shops.</p>
+</section>
+
+<section class="section wrap" id="deals">
+  <div class="sec-head">
+    <h2>Aktuelle Empfehlungen</h2>
+    <p>Eine kleine Auswahl an Produkten, die wir empfehlen.</p>
+  </div>
+
+  <div class="deals">
+    {deals.map((d) => (
+      <article class="card">
+        <div class={`frame ${d.bg}`}>
+          <img src={`/img/${d.img}`} alt={d.alt} loading="lazy">
+        </div>
+        <div class="card-body">
+          <span class="tag">{d.tag}</span>
+          <h3>{d.title}</h3>
+          <p>{d.text}</p>
+          <a href={d.url} class="btn btn-dark btn-block" rel="sponsored noopener" target="_blank">
+            Bei Amazon ansehen
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <div class="disclosure">
+    <strong>Affiliate-Hinweis:</strong> Diese Seite enthält Werbelinks (sog. Affiliate-Links). Wenn du über einen dieser Links etwas kaufst, erhält Kaza Living ggf. eine kleine Provision vom jeweiligen Anbieter — für dich entstehen dadurch keine zusätzlichen Kosten. Die Auswahl der Produkte erfolgt unabhängig von etwaigen Provisionen.
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span class="wordmark"><span class="ipa">'</span>ka<span class="ipa">:</span>za <span style="color:var(--honey-deep);font-size:15px">deals</span></span>
+    <nav class="foot-links">
+      <a href="https://kaza-living.de/#impressum">Impressum</a>
+      <a href="https://kaza-living.de/datenschutz.html">Datenschutz</a>
+    </nav>
+    <small>© Kaza Living</small>
+  </div>
+</footer>
+
+</body>
+</html>
+
+<style is:global>
+  :root{
+    --paper:#ECE4D8;
+    --paper-soft:#F6F1E8;
+    --espresso:#2A2420;
+    --espresso-soft:#3B342D;
+    --ink:#2A2420;
+    --ink-mute:#6B6055;
+    --honey:#B8824A;
+    --honey-deep:#9A6B38;
+    --clay:#9C5A3C;
+    --line:rgba(42,36,32,.14);
+    --line-light:rgba(246,241,232,.18);
+    --maxw:1180px;
+    --r:14px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Hanken Grotesk",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:400;line-height:1.05;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{display:block;width:100%;height:100%;object-fit:cover}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+  .wordmark{font-family:"Poppins",sans-serif;font-weight:300;letter-spacing:.04em;line-height:1;display:inline-block}
+  .wordmark .ipa{opacity:.55;font-weight:300}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(236,228,216,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .nav .wordmark{font-size:26px}
+  .nav-links{display:flex;align-items:center;gap:20px}
+  .nav-links a{font-size:13px;letter-spacing:.04em;color:var(--ink-mute)}
+
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--honey-deep);margin-bottom:26px}
+  .eyebrow::before{content:"";width:34px;height:1px;background:var(--honey-deep)}
+
+  /* Werbekennzeichnung */
+  .werbehinweis{background:var(--espresso);color:var(--paper-soft);text-align:center;font-size:13.5px;letter-spacing:.02em;padding:10px 20px}
+  .werbehinweis strong{color:#D9A86A}
+
+  .hero{padding:70px 0 40px}
+  .hero h1{font-size:clamp(38px,6vw,64px);font-weight:300;max-width:16ch}
+  .hero h1 em{font-style:italic;color:var(--honey-deep)}
+  .hero .lead{margin-top:20px;font-size:18px;color:var(--ink-mute);max-width:56ch}
+
+  .frame{position:relative;border-radius:var(--r);overflow:hidden}
+  .frame::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px var(--line);border-radius:var(--r);pointer-events:none}
+  .g-honey{background:linear-gradient(140deg,#C8975A,#8C5F32)}
+  .g-oat{background:linear-gradient(140deg,#E2D6C2,#C4AE8E)}
+  .g-clay{background:linear-gradient(140deg,#B27A5C,#824E37)}
+
+  .section{padding:60px 0}
+  .sec-head{margin-bottom:34px}
+  .sec-head h2{font-size:clamp(26px,4vw,38px);font-weight:300}
+  .sec-head p{color:var(--ink-mute);max-width:54ch;margin-top:10px}
+
+  .deals{display:grid;grid-template-columns:repeat(2,minmax(0,340px));justify-content:center;gap:22px}
+  .card{background:var(--paper-soft);border-radius:18px;overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column}
+  .card .frame{border-radius:0;aspect-ratio:1/1}
+  .card .frame::after{box-shadow:none}
+  .card-body{padding:22px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .card-body .tag{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--honey-deep)}
+  .card-body h3{font-size:20px;font-weight:500}
+  .card-body p{font-size:14.5px;color:var(--ink-mute);flex:1}
+  .price-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+  .price{font-family:"Fraunces";font-size:20px;color:var(--ink)}
+  .price .old{font-size:14px;color:var(--ink-mute);text-decoration:line-through;margin-right:8px;font-family:"Hanken Grotesk"}
+
+  .btn{
+    font-family:"Hanken Grotesk";font-size:14.5px;letter-spacing:.02em;
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    padding:12px 20px;border-radius:46px;cursor:pointer;
+    transition:transform .2s,box-shadow .2s;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-dark{background:var(--espresso);color:var(--paper-soft)}
+  .btn-dark:hover{box-shadow:0 14px 30px -16px rgba(42,36,32,.7)}
+  .btn-block{width:100%;margin-top:6px}
+  .btn svg{width:15px;height:15px}
+
+  .disclosure{background:var(--paper-soft);border:1px solid var(--line);border-radius:14px;padding:22px 26px;font-size:14px;color:var(--ink-mute);margin-top:20px}
+  .disclosure strong{color:var(--ink)}
+
+  footer{border-top:1px solid var(--line);padding:36px 0}
+  .foot{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:center}
+  footer small{color:var(--ink-mute);font-size:13px}
+  .foot-links{display:flex;gap:20px;font-size:13.5px;color:var(--ink-mute)}
+
+  @media (max-width:920px){.deals{grid-template-columns:1fr 1fr}}
+  @media (max-width:600px){.deals{grid-template-columns:1fr}.wrap{padding:0 20px}}
+</style>

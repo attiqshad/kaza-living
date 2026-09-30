@@ -1,0 +1,23 @@
+<svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dekorative Vasen, Schale und Zweig">
+  <rect width="700" height="700" fill="#F2E9D8"/>
+  <ellipse cx="350" cy="560" rx="240" ry="44" fill="#C9B79B" opacity=".5"/>
+
+  <!-- tall vase -->
+  <path d="M180 560 c-30 -150 10 -250 60 -250 s90 100 60 250 Z" fill="#9C5A3C" stroke="#3A2712" stroke-width="9"/>
+  <!-- branch -->
+  <g stroke="#5E6048" stroke-width="7" fill="none" stroke-linecap="round">
+    <path d="M240 320 C240 220 240 190 240 150"/>
+    <path d="M240 250 C270 230 290 220 312 214"/>
+    <path d="M240 210 C214 196 196 190 176 186"/>
+  </g>
+  <circle cx="240" cy="146" r="12" fill="#8E9670"/>
+  <circle cx="316" cy="212" r="11" fill="#8E9670"/>
+  <circle cx="172" cy="184" r="11" fill="#8E9670"/>
+
+  <!-- round bowl -->
+  <path d="M360 470 c0 60 55 90 110 90 s110 -30 110 -90 Z" fill="#C08A4C" stroke="#3A2712" stroke-width="9"/>
+  <ellipse cx="470" cy="470" rx="110" ry="30" fill="#D8AC6C" stroke="#3A2712" stroke-width="8"/>
+
+  <!-- small vase -->
+  <path d="M430 560 c-16 -80 6 -120 40 -120 s56 40 40 120 Z" fill="#5E6048" stroke="#3A2712" stroke-width="8" transform="translate(120 -6)"/>
+</svg>

@@ -1,0 +1,22 @@
+---
+export interface Props {
+  showDescription?: boolean;
+}
+const { showDescription = false } = Astro.props;
+---
+<footer>
+  <div class="wrap foot">
+    <div>
+      <span class="wordmark"><span class="ipa">'</span>ka<span class="ipa">:</span>za</span>
+      {showDescription && (
+        <small>Kaza Living &middot; Online- und Einzelhandel mit Haus- und Dekorationsartikeln sowie Küchen- und Haushaltszubehör; Erbringung von Dekorations- und Gestaltungsdienstleistungen.</small>
+      )}
+    </div>
+    <nav class="foot-links">
+      <a href="/index.html#impressum">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="/agb.html">AGB</a>
+      <a href="/widerruf.html">Widerrufsbelehrung</a>
+    </nav>
+  </div>
+</footer>
