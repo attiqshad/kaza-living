@@ -11,6 +11,18 @@ const REDIRECT_HOSTS = new Map([['www.kaza-living.de', MAIN_HOST]]);
 const SHARED_PREFIXES = ['/css/', '/fonts/', '/img/', '/_astro/'];
 const LEGAL_PAGES = new Set(['/datenschutz.html', '/agb.html', '/widerruf.html', '/404.html']);
 
+// Loofty (Spiel) wohnt jetzt auf liyanex.de – alte Datenschutz-Links dauerhaft dorthin umleiten
+const LOOFTY_PRIVACY_DE = 'https://liyanex.de/de/games/loofty/privacy/';
+const LOOFTY_PRIVACY_EN = 'https://liyanex.de/games/loofty/privacy/';
+const MOVED_TO_LIYANEX = new Map([
+  ['/loofty/datenschutz.html', LOOFTY_PRIVACY_DE],
+  ['/loofty/datenschutz', LOOFTY_PRIVACY_DE],
+  ['/loofty/privacy.html', LOOFTY_PRIVACY_EN],
+  ['/loofty/privacy', LOOFTY_PRIVACY_EN],
+  ['/loofty', 'https://liyanex.de/de/games/loofty/'],
+  ['/loofty/', 'https://liyanex.de/de/games/loofty/'],
+]);
+
 const SECURITY_HEADERS = {
   'X-Content-Type-Options': 'nosniff',
   'X-Frame-Options': 'SAMEORIGIN',
@@ -38,6 +50,9 @@ export default {
     const isMain = hostname === MAIN_HOST;
     const isDeals = hostname === DEALS_HOST;
     if ((isMain || isDeals) && url.protocol === 'http:') return redirect(hostname, pathname, url.search);
+
+    // Loofty moved to liyanex.de (2026-10-06); old links keep working
+    if (MOVED_TO_LIYANEX.has(pathname)) return Response.redirect(MOVED_TO_LIYANEX.get(pathname), 301);
 
     let assetPath = pathname;
     let robots = null;
