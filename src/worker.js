@@ -12,15 +12,15 @@ const SHARED_PREFIXES = ['/css/', '/fonts/', '/img/', '/_astro/', '/favicon.svg'
 const LEGAL_PAGES = new Set(['/datenschutz.html', '/agb.html', '/widerruf.html', '/404.html']);
 
 // Loofty (Spiel) wohnt jetzt auf liyanex.de – alte Datenschutz-Links dauerhaft dorthin umleiten
-const LOOFTY_PRIVACY_DE = 'https://liyanex.de/de/games/loofty/privacy/';
-const LOOFTY_PRIVACY_EN = 'https://liyanex.de/games/loofty/privacy/';
+const LOOFTY_PRIVACY_DE = 'https://liyanex.de/games/loofty/privacy/';
+const LOOFTY_PRIVACY_EN = 'https://liyanex.de/en/games/loofty/privacy/';
 const MOVED_TO_LIYANEX = new Map([
   ['/loofty/datenschutz.html', LOOFTY_PRIVACY_DE],
   ['/loofty/datenschutz', LOOFTY_PRIVACY_DE],
   ['/loofty/privacy.html', LOOFTY_PRIVACY_EN],
   ['/loofty/privacy', LOOFTY_PRIVACY_EN],
-  ['/loofty', 'https://liyanex.de/de/games/loofty/'],
-  ['/loofty/', 'https://liyanex.de/de/games/loofty/'],
+  ['/loofty', 'https://liyanex.de/games/loofty/'],
+  ['/loofty/', 'https://liyanex.de/games/loofty/'],
 ]);
 
 const SECURITY_HEADERS = {
