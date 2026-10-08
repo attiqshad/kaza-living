@@ -1,5 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Strukturierte Daten für Google (Unternehmensangaben wie im Impressum)
+const business = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Kaza Living',
+  alternateName: "'ka:za",
+  description: 'Wohn- und Küchenaccessoires aus natürlichen Materialien sowie Dekorationsberatung für Haus, Heim und Locations – inklusive Umsetzung mit Handwerkern.',
+  url: 'https://kaza-living.de/',
+  logo: 'https://kaza-living.de/favicon.svg',
+  email: 'info@kaza-living.de',
+  telephone: '+49 152 05168185',
+  founder: { '@type': 'Person', name: 'Attiq Shad' },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Am Schelmengraben 11',
+    postalCode: '64720',
+    addressLocality: 'Michelstadt',
+    addressRegion: 'Hessen',
+    addressCountry: 'DE',
+  },
+};
 ---
 <BaseLayout
   title="'ka:za — Kaza Living | Wohnaccessoires & Dekorationsberatung"
@@ -7,6 +29,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   navVariant="home"
   footerDescription={true}
 >
+<script type="application/ld+json" slot="head" set:html={JSON.stringify(business)} />
 
 <a id="top"></a>
 
@@ -231,7 +254,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </div>
   <div class="reveal" style="max-width:52ch">
-    <p><strong>Angaben gemäß § 5 TMG</strong></p>
+    <p><strong>Angaben gemäß § 5 DDG</strong></p>
     <p style="margin-top:14px">
       Attiq Shad<br>
       Kaza Living<br>
@@ -245,7 +268,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       E-Mail: <a href="mailto:info@kaza-living.de">info@kaza-living.de</a>
     </p>
     <p style="margin-top:14px;color:var(--ink-mute);font-size:14.5px">
-      Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Attiq Shad, Anschrift wie oben.
+      Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: Attiq Shad, Anschrift wie oben.
     </p>
   </div>
 </section>

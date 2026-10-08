@@ -18,6 +18,8 @@ const {
   navVariant = 'legal',
   footerDescription = false,
 } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname.replace(/index\.html$/, ''), Astro.site).href;
 ---
 
 <!DOCTYPE html>
@@ -28,7 +30,17 @@ const {
   <title>{title}</title>
   {description && <meta name="description" content={description} />}
   {noindex && <meta name="robots" content="noindex, follow" />}
+  {!noindex && <link rel="canonical" href={canonical} />}
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#ECE4D8" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="Kaza Living" />
+  <meta property="og:title" content={title} />
+  {description && <meta property="og:description" content={description} />}
+  <meta property="og:url" content={canonical} />
   <link rel="stylesheet" href="/css/fonts.css" />
+  <slot name="head" />
 </head>
 <body>
   <Header variant={navVariant} />

@@ -1,5 +1,9 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
+
+// Seiten mit noindex gehören nicht in die Sitemap (Rechtstexte, Deals-Subdomain, Fehlerseite)
+const NOINDEX_PAGES = ['datenschutz', 'agb', 'widerruf', 'deals', '404'];
 
 export default defineConfig({
   site: 'https://kaza-living.de',
@@ -8,4 +12,9 @@ export default defineConfig({
   build: {
     format: 'file',
   },
+  integrations: [
+    sitemap({
+      filter: (page) => !NOINDEX_PAGES.some((p) => page.endsWith(`/${p}.html`) || page.endsWith(`/${p}`)),
+    }),
+  ],
 });

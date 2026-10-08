@@ -8,7 +8,7 @@ const DEALS_HOST = 'deals.kaza-living.de';
 const REDIRECT_HOSTS = new Map([['www.kaza-living.de', MAIN_HOST]]);
 
 // Auf der Deals-Subdomain erlaubte Pfade (Rest geht auf die Hauptseite)
-const SHARED_PREFIXES = ['/css/', '/fonts/', '/img/', '/_astro/'];
+const SHARED_PREFIXES = ['/css/', '/fonts/', '/img/', '/_astro/', '/favicon.svg'];
 const LEGAL_PAGES = new Set(['/datenschutz.html', '/agb.html', '/widerruf.html', '/404.html']);
 
 // Loofty (Spiel) wohnt jetzt auf liyanex.de – alte Datenschutz-Links dauerhaft dorthin umleiten
@@ -64,6 +64,8 @@ export default {
       robots = 'noindex, nofollow';
     } else {
       if (isMain && (pathname === '/deals.html' || pathname === '/deals')) return redirect(DEALS_HOST, '/');
+      // Nur eine URL für die Startseite (Google soll nicht / und /index.html getrennt sehen)
+      if (isMain && pathname === '/index.html') return redirect(MAIN_HOST, '/', url.search);
       if (pathname === '/') assetPath = '/index.html';
       if (!isMain) robots = 'noindex, nofollow';
       else if (LEGAL_PAGES.has(pathname)) robots = 'noindex, follow';
